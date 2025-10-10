@@ -20,37 +20,47 @@ let MChoice ;
         }                 
 
     if(UChoice ==='R' && MChoice === "Rock"){
-        console.log(" Both equal ! ")
+        alert(" Both equal ! ")
     }
     else if(UChoice ==='R' && MChoice === "Paper"){
         MScore++;
-        console.log("Oh, Machine wins this hand !")
+        alert("Oh, Machine wins this hand !")
     }
     else if(UChoice ==='R' && MChoice === "Scissors"){
         UScore++;
-        console.log("Oh, you win this hand !")
+        alert("Oh, you win this hand !")
     }
     else if(UChoice ==='P' && MChoice === "Paper"){
-        console.log(" Both equal ! ")
+        alert(" Both equal ! ")
     }
     else if(UChoice ==='P' && MChoice === "Scissors"){
         MScore++;
-        console.log("Oh, Machine wins this hand !")
+        alert("Oh, Machine wins this hand !")
     }
     else if(UChoice ==='P' && MChoice === "Rock"){
         UScore++;
-        console.log("Oh, you win this hand !")
+        alert("Oh, you win this hand !")
     }
     else if(UChoice ==='S' && MChoice === "Rock"){
         MScore++;
-        console.log("Oh, Machine wins this hand !")
+        alert("Oh, Machine wins this hand !")
     }
     else if(UChoice ==='S' && MChoice === "Paper"){
         UScore++;
-        console.log("Oh, you win this hand !")
+        alert("Oh, you win this hand !")
     }
     else if(UChoice ==='S' && MChoice === "Scissors"){
-        console.log(" Both equal ! ")
+        alert(" Both equal ! ")
 
     }
+
 }
+    if(UScore > MScore){
+        alert("Congratssss ! \n" +"You won the game.")
+    }
+    else{
+        alert("Machine won the game ! \n" +"Try again.")
+        
+    }
+
+alert("You win " +UScore+ " hands and machine win "+MScore+" hands.")
