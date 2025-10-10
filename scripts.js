@@ -2,7 +2,7 @@
 let UScore = 0;
 let MScore = 0;
 let EqScore = 0;
-for (let i=0 ;i<5 ; i++){
+for (let i=0 ;UScore < 5 && MScore < 5 ; i++){
 let UChoice = prompt("Inter your choice : \n"+
                     "R as Rock \n"+
                     "P as Paper\n"+
