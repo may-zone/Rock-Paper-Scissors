@@ -1,6 +1,7 @@
 
 let UScore = 0;
 let MScore = 0;
+let EqScore = 0;
 for (let i=0 ;i<5 ; i++){
 let UChoice = prompt("Inter your choice : \n"+
                     "R as Rock \n"+
@@ -20,6 +21,7 @@ let MChoice ;
         }                 
 
     if(UChoice ==='R' && MChoice === "Rock"){
+        EqScore++;
         alert(" Both equal ! ")
     }
     else if(UChoice ==='R' && MChoice === "Paper"){
@@ -31,6 +33,7 @@ let MChoice ;
         alert("Oh, you win this hand !")
     }
     else if(UChoice ==='P' && MChoice === "Paper"){
+        EqScore++;       
         alert(" Both equal ! ")
     }
     else if(UChoice ==='P' && MChoice === "Scissors"){
@@ -50,6 +53,7 @@ let MChoice ;
         alert("Oh, you win this hand !")
     }
     else if(UChoice ==='S' && MChoice === "Scissors"){
+        EqScore++;
         alert(" Both equal ! ")
 
     }
@@ -63,4 +67,4 @@ let MChoice ;
         
     }
 
-alert("You win " +UScore+ " hands and machine win "+MScore+" hands.")
+alert("You won " +UScore+ " hands, machine won "+MScore+" hands and "+EqScore+ " were ties .")
