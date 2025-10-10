@@ -1,7 +1,12 @@
+
+let UScore = 0;
+let MScore = 0;
+for (let i=0 ;i<5 ; i++){
 let UChoice = prompt("Inter your choice : \n"+
                     "R as Rock \n"+
                     "P as Paper\n"+
-                    "S as Scissors")
+                    "S as Scissors").toUpperCase();
+
 let CRand = Math.floor(Math.random() * 3);
 let MChoice ;
     if(CRand ==0){
@@ -12,11 +17,8 @@ let MChoice ;
         }
     else{
           MChoice = "Scissors"
-        }
-    
-let UScore = 0;
-let MScore = 0;
-for (let i=0 ;i<5 ; i++){
+        }                 
+
     if(UChoice ==='R' && MChoice === "Rock"){
         console.log(" Both equal ! ")
     }
