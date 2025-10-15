@@ -38,14 +38,18 @@ function Play(UChoice, MChoice) {
   }
   const score = document.createElement('div');
 score.className ="score";
-score.textContent = `your score: ${UScore}\n machine score: ${MScore}`;
+score.textContent = `your score : ${UScore}\n machine score : ${MScore} Tie hands :${EqScore}` ;
 
 document.body.appendChild(score);
   if (UScore >= 5 || MScore>=5) {
     if (UScore > MScore) {
       console.log("Congratssss ! \n" + "You won the game.");
+      score.textContent = "You won the game ."
+
     } else {
       console.log("Machine won the game ! \n" + "Try again.");
+      score.textContent = "oh! you lost"
+
     }
   console.log(
     "You won " +
