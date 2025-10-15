@@ -1,70 +1,63 @@
-
 let UScore = 0;
 let MScore = 0;
 let EqScore = 0;
-for (let i=0 ;UScore < 5 && MScore < 5 ; i++){
-let UChoice = prompt("Inter your choice : \n"+
-                    "R as Rock \n"+
-                    "P as Paper\n"+
-                    "S as Scissors").toUpperCase();
+document.getElementById("rock").addEventListener("click", function () {
+  UChoice = "rock";
+  let CRand = Math.floor(Math.random() * 3);
+  let MChoice = CRand == 0 ? "rock" : CRand == 1 ? "paper" : "scissors";
+  Play(UChoice, MChoice);
+});
 
-let CRand = Math.floor(Math.random() * 3);
-let MChoice ;
-    if(CRand ==0){
-         MChoice = "Rock"
-    }
-    else if (CRand ==1){
-          MChoice = "Paper"
-        }
-    else{
-          MChoice = "Scissors"
-        }                 
+document.getElementById("paper").addEventListener("click", function () {
+  UChoice = "paper";
+  let CRand = Math.floor(Math.random() * 3);
+  let MChoice = CRand == 0 ? "rock" : CRand == 1 ? "paper" : "scissors";
+  Play(UChoice, MChoice);
+});
 
-    if(UChoice ==='R' && MChoice === "Rock"){
-        EqScore++;
-        alert(" Both equal ! ")
-    }
-    else if(UChoice ==='R' && MChoice === "Paper"){
-        MScore++;
-        alert("Oh, Machine wins this hand !")
-    }
-    else if(UChoice ==='R' && MChoice === "Scissors"){
-        UScore++;
-        alert("Oh, you win this hand !")
-    }
-    else if(UChoice ==='P' && MChoice === "Paper"){
-        EqScore++;       
-        alert(" Both equal ! ")
-    }
-    else if(UChoice ==='P' && MChoice === "Scissors"){
-        MScore++;
-        alert("Oh, Machine wins this hand !")
-    }
-    else if(UChoice ==='P' && MChoice === "Rock"){
-        UScore++;
-        alert("Oh, you win this hand !")
-    }
-    else if(UChoice ==='S' && MChoice === "Rock"){
-        MScore++;
-        alert("Oh, Machine wins this hand !")
-    }
-    else if(UChoice ==='S' && MChoice === "Paper"){
-        UScore++;
-        alert("Oh, you win this hand !")
-    }
-    else if(UChoice ==='S' && MChoice === "Scissors"){
-        EqScore++;
-        alert(" Both equal ! ")
+document.getElementById("scissors").addEventListener("click", function () {
+  UChoice = "scissors";
+  let CRand = Math.floor(Math.random() * 3);
+  let MChoice = CRand == 0 ? "rock" : CRand == 1 ? "paper" : "scissors";
+  Play(UChoice, MChoice);
+});
+function Play(UChoice, MChoice) {
+  if (UChoice ===  MChoice) {
+    EqScore++;
+    console.log("Tie!");
+  } else if (
+    (UChoice == "rock" && MChoice == "scissors") ||
+    (UChoice == "paper" && MChoice == "rock") ||
+    (UChoice == "scissors" && MChoice == "paper")
+  ) {
+    UScore++;
+    console.log("user won ! ");
+  } else {
+    MScore++;
+    console.log("machine won!");
+  }
+  const score = document.createElement('div');
+score.className ="score";
+score.textContent = `your score: ${UScore}\n machine score: ${MScore}`;
 
+document.body.appendChild(score);
+  if (UScore >= 5 || MScore>=5) {
+    if (UScore > MScore) {
+      console.log("Congratssss ! \n" + "You won the game.");
+    } else {
+      console.log("Machine won the game ! \n" + "Try again.");
     }
+  console.log(
+    "You won " +
+      UScore +
+      " hands, machine won " +
+      MScore +
+      " hands and " +
+      EqScore +
+      " were ties ."
+  );  
+  
+}
+
 
 }
-    if(UScore > MScore){
-        alert("Congratssss ! \n" +"You won the game.")
-    }
-    else{
-        alert("Machine won the game ! \n" +"Try again.")
-        
-    }
-
-alert("You won " +UScore+ " hands, machine won "+MScore+" hands and "+EqScore+ " were ties .")
