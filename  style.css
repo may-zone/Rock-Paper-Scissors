@@ -1,19 +1,103 @@
+
+body{
+    background-color: #e4f1fe;
+}
 .btns{
     padding :0px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 300px;
+    font-family:"Bitcount Ink" ;
 }
 button{
 width: 300px;
 height: 100px;
 align-items: center;
 border-radius: 10px;
-
+font-size: 18px;
+font-weight: bold;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 .score {
 text-align: center;
 font-weight: bold;
 font-size: 24px;
+background: #22313f;
+color :  #e4f1fe;
+}
+
+/* #rock{
+background: #e4f1fe;
+}
+
+#paper{
+background: #8dc6ff; 
+}
+
+#scissors{
+background: #34495e; 
+color :#e4f1fe; 
+ } */
+.rps{
+  position: relative;
+  overflow: hidden;
+  border: 1px solid currentColor;
+  background: #fff;
+  color: #070707; 
+  transition: color .3s ease-in-out;
+  border-radius: 999px;
+}
+.rps::after{
+  content: "";
+  position: absolute;
+  inset: 100% 0 0;
+  background: var(--bg, #070707);
+  transition: inset .3s ease-in-out;
+  pointer-events: none;
+  z-index: 0;
+}
+.rps::before{
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  top: -45%;
+  transform: translateX(-50%);
+  padding: .25rem .75rem;
+  font-size: .875rem;
+  color: #fff;
+  background: var(--bg, #070707);
+  border-radius: .25rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: top .4s cubic-bezier(.47,2,.41,1.5),
+  visibility .3s ease-in-out,
+  opacity .2s ease-in-out;
+  pointer-events: none;
+  z-index: 2;
+}
+.rps:hover,
+.rps:focus-visible{
+  color: #fff;
+}
+.rps:hover::after,
+.rps:focus-visible::after{
+  inset-block-start: 0;
+}
+.rps:hover::before,
+.rps:focus-visible::before{
+  opacity: 1;
+  visibility: visible;
+  top: -60%;
+}
+.rps > *{
+  position: relative;
+  z-index: 1;
+}
+.rps > span{ position:relative; z-index:1;
+  font-family: "Bitcount Ink", system-ui, sans-serif;
+  font-weight: 900; 
+  font-size: 28px;
 }

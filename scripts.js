@@ -36,11 +36,18 @@ function Play(UChoice, MChoice) {
     MScore++;
     console.log("machine won!");
   }
-  const score = document.createElement('div');
-score.className ="score";
-score.textContent = `your score : ${UScore}\n machine score : ${MScore} Tie hands :${EqScore}` ;
+//   const score = document.createElement('div');
+// score.className ="score";
+// score.textContent = `your score : ${UScore}\n machine score : ${MScore} Tie hands :${EqScore}` ;
 
-document.body.appendChild(score);
+// document.body.appendChild(score);
+let score = document.querySelector('.score');
+if (!score) {
+  score = document.createElement('div');
+  score.className = 'score';
+  document.body.appendChild(score);
+}
+score.textContent = `your score : ${UScore} machine score : ${MScore} Tie hands : ${EqScore}`;
   if (UScore >= 5 || MScore>=5) {
     if (UScore > MScore) {
       console.log("Congratssss ! \n" + "You won the game.");
